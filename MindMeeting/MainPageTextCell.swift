@@ -2,14 +2,15 @@
 //  LoginCell.swift
 //  MindMeeting
 //
-//  Created by MacBookPro on 2018. 4. 24..
+//  Created by MacBookPro on 2018. 4. 23..
 //  Copyright © 2018년 MacBookPro. All rights reserved.
 //
 
 import UIKit
 
-class LoginCell: UICollectionViewCell {
+class MainPageTextCell: UICollectionViewCell {
     
+
     let textView: UITextView = {
         let tv = UITextView()
         tv.text = ""
@@ -23,7 +24,7 @@ class LoginCell: UICollectionViewCell {
         super.init(frame: frame)
         
         addSubview(textView)
-        
+
         
         //ios 9 constraints
         //x,y,w,h

@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        let loginCVC = LoginCVC(collectionViewLayout: layout)
+        let loginCVC = MainPageCVC(collectionViewLayout: layout)
         
         window?.rootViewController = loginCVC
         
