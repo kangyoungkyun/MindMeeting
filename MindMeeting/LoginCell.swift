@@ -12,19 +12,26 @@ class LoginCell: UICollectionViewCell {
     
     let textView: UITextView = {
         let tv = UITextView()
-        tv.text = ""
+        tv.text = "ㅋㅋㅋ"
         tv.backgroundColor = .clear
         tv.font = UIFont.systemFont(ofSize: 16)
+        tv.textColor = .white
         tv.translatesAutoresizingMaskIntoConstraints = false
         return tv
     }()
     
+
+    
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+  
         addSubview(textView)
         
         
+        
+
         //ios 9 constraints
         //x,y,w,h
         textView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true

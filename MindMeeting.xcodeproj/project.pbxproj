@@ -17,6 +17,7 @@
 		5298B6F6208DC77F00A28A5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5298B6F4208DC77F00A28A5A /* LaunchScreen.storyboard */; };
 		5298B6FE208DC8A100A28A5A /* MainPageCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5298B6FD208DC8A100A28A5A /* MainPageCVC.swift */; };
 		5298B700208DCCA300A28A5A /* MainPageTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5298B6FF208DCCA300A28A5A /* MainPageTextCell.swift */; };
+		52AE84E22090073200B5B771 /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AE84E12090073200B5B771 /* MainCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		5298B6F7208DC77F00A28A5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5298B6FD208DC8A100A28A5A /* MainPageCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageCVC.swift; sourceTree = "<group>"; };
 		5298B6FF208DCCA300A28A5A /* MainPageTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageTextCell.swift; sourceTree = "<group>"; };
+		52AE84E12090073200B5B771 /* MainCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				5298B6EF208DC77F00A28A5A /* MindMeeting.xcdatamodeld */,
 				521CB6A7208EE16300B320C1 /* read.txt */,
 				521CB6A9208EE18100B320C1 /* write.txt */,
+				52AE84E12090073200B5B771 /* MainCollectionViewController.swift */,
 			);
 			path = MindMeeting;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5298B6E9208DC77F00A28A5A /* AppDelegate.swift in Sources */,
+				52AE84E22090073200B5B771 /* MainCollectionViewController.swift in Sources */,
 				5298B6FE208DC8A100A28A5A /* MainPageCVC.swift in Sources */,
 				521CB6AC208F003300B320C1 /* LoginCell.swift in Sources */,
 				5298B6F1208DC77F00A28A5A /* MindMeeting.xcdatamodeld in Sources */,
