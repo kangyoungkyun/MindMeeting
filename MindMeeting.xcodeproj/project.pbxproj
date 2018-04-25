@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		520609852090F8B800EF10C4 /* kyk2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 520609842090F8B800EF10C4 /* kyk2.jpeg */; };
 		521CB6A8208EE16300B320C1 /* read.txt in Resources */ = {isa = PBXBuildFile; fileRef = 521CB6A7208EE16300B320C1 /* read.txt */; };
 		521CB6AA208EE18100B320C1 /* write.txt in Resources */ = {isa = PBXBuildFile; fileRef = 521CB6A9208EE18100B320C1 /* write.txt */; };
 		521CB6AC208F003300B320C1 /* LoginCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521CB6AB208F003300B320C1 /* LoginCell.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		520609842090F8B800EF10C4 /* kyk2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kyk2.jpeg; sourceTree = "<group>"; };
 		521CB6A7208EE16300B320C1 /* read.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = read.txt; sourceTree = "<group>"; };
 		521CB6A9208EE18100B320C1 /* write.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = write.txt; sourceTree = "<group>"; };
 		521CB6AB208F003300B320C1 /* LoginCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCell.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 		5298B6E7208DC77F00A28A5A /* MindMeeting */ = {
 			isa = PBXGroup;
 			children = (
+				520609842090F8B800EF10C4 /* kyk2.jpeg */,
 				5298B6FF208DCCA300A28A5A /* MainPageTextCell.swift */,
 				521CB6AB208F003300B320C1 /* LoginCell.swift */,
 				5298B6E8208DC77F00A28A5A /* AppDelegate.swift */,
@@ -144,6 +147,7 @@
 				5298B6F6208DC77F00A28A5A /* LaunchScreen.storyboard in Resources */,
 				521CB6AA208EE18100B320C1 /* write.txt in Resources */,
 				5298B6F3208DC77F00A28A5A /* Assets.xcassets in Resources */,
+				520609852090F8B800EF10C4 /* kyk2.jpeg in Resources */,
 				521CB6A8208EE16300B320C1 /* read.txt in Resources */,
 				5298B6EE208DC77F00A28A5A /* Main.storyboard in Resources */,
 			);

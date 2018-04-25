@@ -36,7 +36,7 @@ class MainPageCVC: UICollectionViewController, UICollectionViewDelegateFlowLayou
                                       repeats: true)
     }
     var txt2 = [String]()
-    var txt = ["안녕" , "반가워" , "10초걸리는데 괜찮아?","yes or no", "yes","감사합니다."] // 0 - 5    , count - 6
+    var txt = ["안녕하세요^^" , "만나뵈서 정말 반가워요~!" , "10초정도만 시간을 주실 수 있으세요^^?","yes or no", "yes","감사합니다."] // 0 - 5    , count - 6
     
     var arrayNum = 0
     @objc func showTextPerSecond(){
@@ -82,26 +82,38 @@ class MainPageCVC: UICollectionViewController, UICollectionViewDelegateFlowLayou
             cell?.textView.layer.cornerRadius = 16
             cell?.textView.layer.masksToBounds = true
             cell?.textView.isEditable = false
+            
+            
             cell?.bubbleWidthAnchor?.constant = estimatFrameForText(text: txt2[indexPath.row]).width + 32
+            cell?.bubbleViewLeftAnchor?.isActive = true
+            cell?.bubbleViewRightAnchor?.isActive = false
+            cell?.profileImageView.isHidden = false
+            
+            
         }else if (indexPath.row == 3){
             if(arrayNum == 5){
                 print("array - 5")
                 cell?.textView.text = txt2[indexPath.row]
-                //cell?.textView.backgroundColor = .white
+                cell?.textView.backgroundColor = .brown
                 cell?.textView.layer.cornerRadius = 16
                 cell?.textView.layer.masksToBounds = true
                 cell?.textView.isEditable = false
                 cell?.bubbleWidthAnchor?.constant = estimatFrameForText(text: txt2[indexPath.row]).width + 32
+                
+                cell?.bubbleViewLeftAnchor?.isActive = false
+                cell?.bubbleViewRightAnchor?.isActive = true
+                cell?.profileImageView.isHidden = true
+                
                 return cell!
             }else{
-                //cell =  yesNoCellButton(indexPath: indexPath)
+
                 print("indexpath-3 번째 행에서 arraynum - \(arrayNum) \n")
-                //cell?.textView.backgroundColor = .clear
-                //cell?.textView.isHidden = true
+
                 cell?.bubbleView.backgroundColor = .clear
-                
                 cell?.addSubview(yesBtn)
                 cell?.addSubview(noBtn)
+                
+                cell?.profileImageView.isHidden = true
                 
                 yesBtn.leadingAnchor.constraint(equalTo: (cell?.leadingAnchor)!, constant: 30).isActive = true
                 yesBtn.widthAnchor.constraint(equalToConstant: 80).isActive = true
@@ -122,6 +134,10 @@ class MainPageCVC: UICollectionViewController, UICollectionViewDelegateFlowLayou
             cell?.textView.layer.masksToBounds = true
             cell?.textView.isEditable = false
             cell?.bubbleWidthAnchor?.constant = estimatFrameForText(text: txt2[indexPath.row]).width + 32
+            
+            cell?.bubbleViewLeftAnchor?.isActive = true
+            cell?.bubbleViewRightAnchor?.isActive = false
+            cell?.profileImageView.isHidden = false
         }
         
         return cell!
