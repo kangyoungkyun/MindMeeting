@@ -11,6 +11,7 @@
 		521CB6A8208EE16300B320C1 /* read.txt in Resources */ = {isa = PBXBuildFile; fileRef = 521CB6A7208EE16300B320C1 /* read.txt */; };
 		521CB6AA208EE18100B320C1 /* write.txt in Resources */ = {isa = PBXBuildFile; fileRef = 521CB6A9208EE18100B320C1 /* write.txt */; };
 		521CB6AC208F003300B320C1 /* LoginCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521CB6AB208F003300B320C1 /* LoginCell.swift */; };
+		521E83BA2091FE61007FDB96 /* MainCollectionViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E83B92091FE61007FDB96 /* MainCollectionViewController2.swift */; };
 		5298B6E9208DC77F00A28A5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5298B6E8208DC77F00A28A5A /* AppDelegate.swift */; };
 		5298B6EE208DC77F00A28A5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5298B6EC208DC77F00A28A5A /* Main.storyboard */; };
 		5298B6F1208DC77F00A28A5A /* MindMeeting.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5298B6EF208DC77F00A28A5A /* MindMeeting.xcdatamodeld */; };
@@ -26,6 +27,7 @@
 		521CB6A7208EE16300B320C1 /* read.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = read.txt; sourceTree = "<group>"; };
 		521CB6A9208EE18100B320C1 /* write.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = write.txt; sourceTree = "<group>"; };
 		521CB6AB208F003300B320C1 /* LoginCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCell.swift; sourceTree = "<group>"; };
+		521E83B92091FE61007FDB96 /* MainCollectionViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController2.swift; sourceTree = "<group>"; };
 		5298B6E5208DC77F00A28A5A /* MindMeeting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MindMeeting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5298B6E8208DC77F00A28A5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5298B6ED208DC77F00A28A5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				521CB6A7208EE16300B320C1 /* read.txt */,
 				521CB6A9208EE18100B320C1 /* write.txt */,
 				52AE84E12090073200B5B771 /* MainCollectionViewController.swift */,
+				521E83B92091FE61007FDB96 /* MainCollectionViewController2.swift */,
 			);
 			path = MindMeeting;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 			files = (
 				5298B6E9208DC77F00A28A5A /* AppDelegate.swift in Sources */,
 				52AE84E22090073200B5B771 /* MainCollectionViewController.swift in Sources */,
+				521E83BA2091FE61007FDB96 /* MainCollectionViewController2.swift in Sources */,
 				5298B6FE208DC8A100A28A5A /* MainPageCVC.swift in Sources */,
 				521CB6AC208F003300B320C1 /* LoginCell.swift in Sources */,
 				5298B6F1208DC77F00A28A5A /* MindMeeting.xcdatamodeld in Sources */,

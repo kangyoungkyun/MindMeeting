@@ -12,7 +12,7 @@ private let reuseIdentifier = "Cell"
 
 class MainCollectionViewController: UICollectionViewController,UICollectionViewDelegateFlowLayout {
 
-    @objc func yesBtnTapped(){
+    @objc func emailJoin(){
         print("예스 버튼")
         if(count == 5){
             print("네, 아뇨 삭제")
@@ -82,7 +82,7 @@ class MainCollectionViewController: UICollectionViewController,UICollectionViewD
             let yesbtn = UIButton(frame: CGRect(x:(cell?.frame.size.width)! / 2 - 90, y:20, width:80,height:40))
             yesbtn.backgroundColor = .green
             yesbtn.setTitle("네", for: UIControlState())
-            yesbtn.addTarget(self, action: #selector(yesBtnTapped), for: .touchUpInside)
+            yesbtn.addTarget(self, action: #selector(emailJoin), for: .touchUpInside)
             
             let nobtn = UIButton(frame: CGRect(x:(cell?.frame.size.width)! / 2, y:20, width:80,height:40))
             nobtn.backgroundColor = .red
@@ -91,6 +91,8 @@ class MainCollectionViewController: UICollectionViewController,UICollectionViewD
             
             cell?.addSubview(yesbtn)
             cell?.addSubview(nobtn)
+            
+            
             cell?.textView.isEditable = false
             stopTimerTest()
         }else if(indexPath.row == 8){
@@ -98,7 +100,7 @@ class MainCollectionViewController: UICollectionViewController,UICollectionViewD
             let yesbtn2 = UIButton(frame: CGRect(x:(cell?.frame.size.width)! / 2 - 90, y:20, width:80,height:40))
             yesbtn2.backgroundColor = .green
             yesbtn2.setTitle("네", for: UIControlState())
-            yesbtn2.addTarget(self, action:#selector(yesBtnTapped), for: .touchUpInside)
+            yesbtn2.addTarget(self, action:#selector(emailJoin), for: .touchUpInside)
             
             let nobtn2 = UIButton(frame: CGRect(x:(cell?.frame.size.width)! / 2, y:20, width:80,height:40))
             nobtn2.backgroundColor = .red

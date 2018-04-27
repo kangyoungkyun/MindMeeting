@@ -8,35 +8,17 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
 
-class MainPageCVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class MainPageCVC: UICollectionViewController, UICollectionViewDelegateFlowLayout,CollectionViewCellDelegate {
+   
+
+    
     var timer : Timer?
     
-    //오른쪽 왼쪽으로 돌렸을 때
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        collectionView?.collectionViewLayout.invalidateLayout()
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        collectionView?.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 58, right: 0)
-        print("진입점 - viewDidLoad \n")
-        //셀 등록
-        collectionView?.alwaysBounceVertical = true
-        self.collectionView!.register(MainPageTextCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
-        self.collectionView!.backgroundColor = UIColor(red:0.61, green:0.85, blue:0.49, alpha:1.0)
-        
-        
-        timer =  Timer.scheduledTimer(timeInterval: 2.0,
-                                      target: self,
-                                      selector: #selector(showTextPerSecond),
-                                      userInfo: nil,
-                                      repeats: true)
-    }
     var txt2 = [String]()
-    var txt = ["안녕하세요^^" , "만나뵈서 정말 반가워요~!" , "10초정도만 시간을 주실 수 있으세요^^?","yes or no", "yes","감사합니다."] // 0 - 5    , count - 6
+    //              0                  1                         2                3          4         5
+    var txt = ["오 누군가오셨다!","안녕하세요! 만나서 반가워요~^^", "3초만에 시작해볼게요!", "yes.no 질문", "대답", "감사합니다"] // 0 - 5,count - 6
+    
     
     var arrayNum = 0
     @objc func showTextPerSecond(){
@@ -48,104 +30,78 @@ class MainPageCVC: UICollectionViewController, UICollectionViewDelegateFlowLayou
         collectionView?.insertItems(at: [insertedIndexPath])
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        //
+        self.collectionView!.register(MainPageTextCell.self, forCellWithReuseIdentifier: "txt")
+        self.collectionView!.register(ACell.self, forCellWithReuseIdentifier: "a")
+        self.collectionView!.register(EmailJoinCell.self, forCellWithReuseIdentifier: "b")
+        collectionView?.alwaysBounceVertical = true
+        collectionView?.backgroundColor = .brown
+        
+        timer =  Timer.scheduledTimer(timeInterval: 1.3,
+                                      target: self,
+                                      selector: #selector(showTextPerSecond),
+                                      userInfo: nil,
+                                      repeats: true)
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("행개수 - numberOfItemsInSection -txt2.count -  \(txt2.count) \n")
+        //
         return txt2.count
     }
     
-    
-    lazy var yesBtn : UIButton = {
-        let btn = UIButton()
-        btn.setTitle("네", for: UIControlState())
-        btn.backgroundColor = .green
-        btn.addTarget(self, action: #selector(yesBtnTapped), for: .touchUpInside)
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        return btn
-    }()
-    
-    lazy var noBtn : UIButton = {
-        let btn = UIButton()
-        btn.setTitle("아니요", for: UIControlState())
-        btn.backgroundColor = .red
-        btn.addTarget(self, action: #selector(noBtnTapped), for: .touchUpInside)
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        return btn
-    }()
-    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        print("행구성 - cellForItemAt - 몇번째 행 - \(indexPath.row)")
-        print("arraynum - \(arrayNum) \n")
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? MainPageTextCell
-        if(indexPath.row < 3){
-            cell?.textView.text = txt2[indexPath.row]
-            cell?.textView.backgroundColor = .white
-            cell?.textView.layer.cornerRadius = 16
-            cell?.textView.layer.masksToBounds = true
-            cell?.textView.isEditable = false
+        
+        
+        let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: "txt", for: indexPath) as? MainPageTextCell)!
+        
+        cell.textView.text = txt2[indexPath.row]
+        cell.textView.layer.cornerRadius = 16
+        cell.textView.layer.masksToBounds = true
+        cell.textView.isEditable = false
+        cell.bubbleWidthAnchor?.constant = estimatFrameForText(text: txt2[indexPath.row]).width + 32
+        cell.bubbleViewLeftAnchor?.isActive = true
+        cell.bubbleViewRightAnchor?.isActive = false
+        cell.profileImageView.isHidden = false
+        
+        if(indexPath.item == 3){
             
-            
-            cell?.bubbleWidthAnchor?.constant = estimatFrameForText(text: txt2[indexPath.row]).width + 32
-            cell?.bubbleViewLeftAnchor?.isActive = true
-            cell?.bubbleViewRightAnchor?.isActive = false
-            cell?.profileImageView.isHidden = false
-            
-            
-        }else if (indexPath.row == 3){
             if(arrayNum == 5){
                 print("array - 5")
-                cell?.textView.text = txt2[indexPath.row]
-                cell?.textView.backgroundColor = .brown
-                cell?.textView.layer.cornerRadius = 16
-                cell?.textView.layer.masksToBounds = true
-                cell?.textView.isEditable = false
-                cell?.bubbleWidthAnchor?.constant = estimatFrameForText(text: txt2[indexPath.row]).width + 32
+                cell.textView.text = txt2[indexPath.row]
+                cell.textView.backgroundColor = UIColor(red:0.73, green:0.73, blue:1.00, alpha:1.0)
                 
-                cell?.bubbleViewLeftAnchor?.isActive = false
-                cell?.bubbleViewRightAnchor?.isActive = true
-                cell?.profileImageView.isHidden = true
+                cell.textView.layer.cornerRadius = 16
+                cell.textView.layer.masksToBounds = true
+                cell.textView.isEditable = false
+                cell.bubbleWidthAnchor?.constant = estimatFrameForText(text: txt2[indexPath.row]).width + 32
                 
-                return cell!
+                cell.bubbleViewLeftAnchor?.isActive = false
+                cell.bubbleViewRightAnchor?.isActive = true
+                cell.profileImageView.isHidden = true
+                
+                return cell
             }else{
-
-                print("indexpath-3 번째 행에서 arraynum - \(arrayNum) \n")
-
-                cell?.bubbleView.backgroundColor = .clear
-                cell?.addSubview(yesBtn)
-                cell?.addSubview(noBtn)
-                
-                cell?.profileImageView.isHidden = true
-                
-                yesBtn.leadingAnchor.constraint(equalTo: (cell?.leadingAnchor)!, constant: 30).isActive = true
-                yesBtn.widthAnchor.constraint(equalToConstant: 80).isActive = true
-                yesBtn.heightAnchor.constraint(equalToConstant: 30).isActive = true
-                
-                noBtn.trailingAnchor.constraint(equalTo: (cell?.trailingAnchor)!, constant: -30).isActive = true
-                noBtn.widthAnchor.constraint(equalToConstant: 80).isActive = true
-                noBtn.heightAnchor.constraint(equalToConstant: 30).isActive = true
-                
-                cell?.textView.isEditable = false
+                let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: "b", for: indexPath) as? EmailJoinCell)!
+                cell.delegate = self
                 stopTimerTest()
+                
+                return cell
             }
             
-        }else{
-            cell?.textView.text = txt2[indexPath.row]
-            cell?.textView.backgroundColor = .white
-            cell?.textView.layer.cornerRadius = 16
-            cell?.textView.layer.masksToBounds = true
-            cell?.textView.isEditable = false
-            cell?.bubbleWidthAnchor?.constant = estimatFrameForText(text: txt2[indexPath.row]).width + 32
-            
-            cell?.bubbleViewLeftAnchor?.isActive = true
-            cell?.bubbleViewRightAnchor?.isActive = false
-            cell?.profileImageView.isHidden = false
+
         }
-        
-        return cell!
+//        else if(indexPath.item == 4){
+//            let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: "a", for: indexPath) as? ACell)!
+//            return cell
+//        }
+        return cell
     }
-    
+
     //셀의 사이즈
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        var height = 40
+        var height = 45
         
         let cell =  collectionView.cellForItem(at: indexPath) as? MainPageTextCell
         if let text = cell?.textView.text {
@@ -155,7 +111,7 @@ class MainPageCVC: UICollectionViewController, UICollectionViewDelegateFlowLayou
         return CGSize(width: Int(view.frame.width), height: height)
     }
     
-    
+    //버블 높이
     private func estimatFrameForText(text: String) -> CGRect {
         let size = CGSize(width: 200, height:1000)
         let optoins = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
@@ -167,7 +123,7 @@ class MainPageCVC: UICollectionViewController, UICollectionViewDelegateFlowLayou
         print("스타트 안 - 타이머 상태 \(timer?.isValid)")
         if timer == nil {
             print("시간 작동!")
-            timer =  Timer.scheduledTimer(timeInterval: 2.0,
+            timer =  Timer.scheduledTimer(timeInterval: 1.3,
                                           target: self,
                                           selector: #selector(showTextPerSecond),
                                           userInfo: nil,
@@ -182,23 +138,214 @@ class MainPageCVC: UICollectionViewController, UICollectionViewDelegateFlowLayou
             timer = nil
         }
     }
-    @objc func yesBtnTapped(){
-        print("예스 버튼")
-        if(arrayNum == 4){
-            print("네, 아뇨 삭제")
-            print("txt2.cnt = \(txt2.count)")
-            txt2.remove(at: 3)
-            txt[4] = "괜찮아요~~~~"
-            print("txt2.cnt = \(txt2.count)")
-            let removeIndexPath = IndexPath(item: arrayNum-1, section: 0)
-            collectionView?.deleteItems(at: [removeIndexPath])
-            yesBtn.isHidden = true
-            noBtn.isHidden = true
-            
-        }
-        startTimerTest()
+    
+    
+    func emailJoinBtn() {
+        print("예스 버튼 \(arrayNum)")
+                if(arrayNum == 4){
+                    print("txt2.cnt = \(txt2.count)")
+                    txt2.remove(at: 3)
+                    txt[4] = "넵~이메일로 가입할게요~"
+                    print("txt2.cnt = \(txt2.count)")
+                    let removeIndexPath = IndexPath(item: arrayNum-1, section: 0)
+                    collectionView?.deleteItems(at: [removeIndexPath])
+                }
+        
+                startTimerTest()
     }
+    
+
+    
     @objc func noBtnTapped(){
         print("아니요 버튼")
+        
+    }
+    
+}
+
+// ---------------------------------------------------------------------------------------------------------------- //
+
+class ACell: UICollectionViewCell {
+    let textView: UITextView = {
+        let tv = UITextView()
+        tv.text = "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ"
+        tv.backgroundColor = UIColor(red:0.16, green:0.70, blue:0.36, alpha:1.0)
+        tv.font = UIFont.systemFont(ofSize: 16)
+        tv.textColor = .black
+        tv.translatesAutoresizingMaskIntoConstraints = false
+        return tv
+    }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        addSubview(textView)
+        
+        //ios 9 constraints
+        //x,y,w,h
+        textView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+        textView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        textView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        textView.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        textView.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
+
+
+
+
+
+protocol CollectionViewCellDelegate: class {
+    func emailJoinBtn()
+}
+
+class EmailJoinCell: UICollectionViewCell {
+    
+    weak var delegate: CollectionViewCellDelegate?
+    
+    let textField : UITextField = {
+        let txtField = UITextField()
+        txtField.translatesAutoresizingMaskIntoConstraints = false
+        txtField.backgroundColor = .yellow
+        return txtField
+    }()
+    
+    lazy var btn : UIButton = {
+        let btn = UIButton()
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.setTitle("입력", for: UIControlState())
+        btn.setTitleColor(.black, for: UIControlState())
+        btn.backgroundColor = UIColor(red:0.39, green:0.43, blue:0.81, alpha:1.0)
+        btn.addTarget(self, action: #selector(btnbtn), for: .touchUpInside)
+        return btn
+    }()
+    
+    @objc func btnbtn(){
+        delegate?.emailJoinBtn()
+    }
+    @objc func btnbtn2(){
+        print("수정 클릭 됏음")
+    }
+    lazy var btn2 : UIButton = {
+        let btn = UIButton()
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.setTitle("수정", for: UIControlState())
+        btn.setTitleColor(.black, for: UIControlState())
+        btn.backgroundColor = UIColor.cyan
+        btn.addTarget(self, action: #selector(btnbtn2), for: .touchUpInside)
+        return btn
+    }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        addSubview(textField)
+        addSubview(btn)
+        addSubview(btn2)
+        
+        
+        //ios 9 constraints
+        //x,y,w,h
+        textField.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+        textField.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        textField.trailingAnchor.constraint(equalTo: btn.leadingAnchor).isActive = true
+        textField.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
+        
+        btn.leftAnchor.constraint(equalTo: textField.rightAnchor).isActive = true
+        btn.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        btn.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        btn.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        btn.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.5).isActive = true
+        
+        btn2.leftAnchor.constraint(equalTo: textField.rightAnchor).isActive = true
+        btn2.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        btn2.topAnchor.constraint(equalTo: btn.bottomAnchor).isActive = true
+        btn2.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        btn2.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.5).isActive = true
+        
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+class MainPageTextCell: UICollectionViewCell {
+    
+    let textView: UITextView = {
+        let tv = UITextView()
+        tv.text = ""
+        tv.backgroundColor = .clear
+        tv.font = UIFont.systemFont(ofSize: 16)
+        tv.translatesAutoresizingMaskIntoConstraints = false
+        return tv
+    }()
+    
+    let bubbleView : UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 16
+        view.layer.masksToBounds = true
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let profileImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "kyk2.jpeg")
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.layer.cornerRadius = 16
+        imageView.layer.masksToBounds = true
+        imageView.contentMode = .scaleAspectFill
+        return imageView
+    }()
+    
+    var bubbleWidthAnchor: NSLayoutConstraint?
+    var bubbleViewRightAnchor: NSLayoutConstraint?
+    var bubbleViewLeftAnchor: NSLayoutConstraint?
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        addSubview(bubbleView)
+        addSubview(textView)
+        addSubview(profileImageView)
+        
+        
+        profileImageView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 8).isActive = true
+        profileImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        profileImageView.widthAnchor.constraint(equalToConstant: 32).isActive = true
+        profileImageView.heightAnchor.constraint(equalToConstant: 32).isActive = true
+        
+        
+        //ios 9 constraints
+        //x,y,w,h
+        bubbleViewRightAnchor = bubbleView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -8)
+        bubbleViewRightAnchor?.isActive = true
+        
+        bubbleViewLeftAnchor = bubbleView.leftAnchor.constraint(equalTo: profileImageView.rightAnchor, constant: 8)
+        
+        
+        bubbleView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        
+        bubbleWidthAnchor = bubbleView.widthAnchor.constraint(equalToConstant: 200)
+        bubbleWidthAnchor?.isActive = true
+        
+        bubbleView.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
+        
+        //ios 9 constraints
+        //x,y,w,h
+        textView.leftAnchor.constraint(equalTo: bubbleView.leftAnchor, constant: 8).isActive = true
+        textView.rightAnchor.constraint(equalTo: bubbleView.rightAnchor).isActive = true
+        textView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        textView.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
+        
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+

@@ -19,11 +19,7 @@ class LoginCell: UICollectionViewCell {
         tv.translatesAutoresizingMaskIntoConstraints = false
         return tv
     }()
-    
 
-    
-    
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
   
