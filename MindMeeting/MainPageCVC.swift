@@ -9,19 +9,74 @@
 import UIKit
 
 
-class MainPageCVC: UICollectionViewController, UICollectionViewDelegateFlowLayout,CollectionViewCellDelegate,signButtonClickedDelegate {
+class MainPageCVC: UICollectionViewController, UICollectionViewDelegateFlowLayout,CollectionViewCellDelegate,signButtonClickedDelegate,NameCellDelegate {
+    func nameInsertBtn(name: String) {
+        print("메인페이지로 넘어와서 이름 버튼! \(name)")
+        print("arraynum - \(arrayNum)")
+        
+        if(arrayNum == 9){
+            print("txt2.cnt = \(txt2.count)")
+            
+            print("\(txt2[7])") //호칭질문
+//            print("\(txt2[8])")
+//            print("\(txt[9])")
+//            
+//            print("\(txt[7])")
+//            print("\(txt[8])")
+//            print("\(txt[9])")
+//            
+            
+            txt2.remove(at: 7)
+            txt[8] = "\(name)으로 불러주세요~"
+            print("txt2.cnt = \(txt2.count)")
+            let removeIndexPath = IndexPath(item: arrayNum-1, section: 0)
+            collectionView?.deleteItems(at: [removeIndexPath])
+        }
+        startTimerTest()
+    }
+    
+    
+
+    
+    
+    func loginBtnClick(email: String, password: String) {
+         print("메인페이지로 넘어와서 로그인 버튼! \(email)  \(password)")
+        print("arraynum - \(arrayNum)")
+                        if(arrayNum == 4){
+                            //print("txt2.cnt = \(txt2.count)") //4
+                            txt2.remove(at: 3)
+                            txt[4] = "넵~이메일로 가입할게요~"
+                            //print("txt2.cnt = \(txt2.count)") //3
+                            let removeIndexPath = IndexPath(item: arrayNum-1, section: 0)
+                            collectionView?.deleteItems(at: [removeIndexPath])
+                }
+                        startTimerTest()
+    }
     
     
     func signBtnClick(email: String, password: String) {
-        print("\(email)  \(password)")
+        print("메인페이지로 넘어와서 가입 버튼! \(email)  \(password)")
+        print("arraynum - \(arrayNum)")
+                        if(arrayNum == 4){
+                            print("txt2.cnt = \(txt2.count)")
+                            txt2.remove(at: 3)
+                            txt[4] = "넵~이메일로 가입할게요~"
+                            print("txt2.cnt = \(txt2.count)")
+                            let removeIndexPath = IndexPath(item: arrayNum-1, section: 0)
+                            collectionView?.deleteItems(at: [removeIndexPath])
+                }
+                        startTimerTest()
     }
+    
+    
+    
     
 
     var timer : Timer?
     
     var txt2 = [String]()
     //              0                  1                         2                3          4         5
-    var txt = ["오 누군가오셨다!","안녕하세요! 만나서 반가워요~^^", "3초만에 시작해볼게요!", "yes.no 질문", "대답", "감사합니다"] // 0 - 5,count - 6
+    var txt = ["오 누군가오셨다!","안녕하세요! 만나서 반가워요~^^", "3초만에 시작해볼게요!", "yes.no 질문", "대답", "에고 3초 더 걸린것 같네요..","저는 운영자 강영균이라고 합니다." , "제가 님을 어떻게 부르면 될까요^^?", "호칭 질문", "호칭대답" ,"제친구 별명도 000이었는데"] // 0 - 5,count - 6
     
     
     var arrayNum = 0
@@ -36,9 +91,9 @@ class MainPageCVC: UICollectionViewController, UICollectionViewDelegateFlowLayou
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+         collectionView?.contentInset = UIEdgeInsets(top: 32, left: 0, bottom: 58, right: 0)
         self.collectionView!.register(MainPageTextCell.self, forCellWithReuseIdentifier: "txt")
-        self.collectionView!.register(ACell.self, forCellWithReuseIdentifier: "a")
+        self.collectionView!.register(nameCell.self, forCellWithReuseIdentifier: "a")
         self.collectionView!.register(EmailJoinCell.self, forCellWithReuseIdentifier: "b")
         collectionView?.alwaysBounceVertical = true
         collectionView?.backgroundColor = .brown
@@ -73,12 +128,13 @@ class MainPageCVC: UICollectionViewController, UICollectionViewDelegateFlowLayou
             if(arrayNum == 5){
                 print("array - 5")
                 cell.textView.text = txt2[indexPath.row]
-                cell.textView.backgroundColor = UIColor(red:0.73, green:0.73, blue:1.00, alpha:1.0)
-                
+                cell.textView.backgroundColor = UIColor.yellow
+                cell.bubbleView.backgroundColor = UIColor.brown
                 cell.textView.layer.cornerRadius = 16
                 cell.textView.layer.masksToBounds = true
                 cell.textView.isEditable = false
                 cell.bubbleWidthAnchor?.constant = estimatFrameForText(text: txt2[indexPath.row]).width + 32
+                
                 
                 cell.bubbleViewLeftAnchor?.isActive = false
                 cell.bubbleViewRightAnchor?.isActive = true
@@ -87,18 +143,40 @@ class MainPageCVC: UICollectionViewController, UICollectionViewDelegateFlowLayou
                 return cell
             }else{
                 let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: "b", for: indexPath) as? EmailJoinCell)!
-
                 cell.delegate = self
-                
                 stopTimerTest()
                 
                 return cell
             }
         }
-//        else if(indexPath.item == 4){
-//            let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: "a", for: indexPath) as? ACell)!
-//            return cell
-//        }
+        else if(indexPath.item == 7){
+            print("인덱스가 7일때 어레이 넘. \(arrayNum)")
+            if(arrayNum == 10){
+                print("array - 10")
+                cell.textView.text = txt2[indexPath.row]
+                cell.textView.backgroundColor = UIColor.yellow
+                cell.bubbleView.backgroundColor = UIColor.brown
+                cell.textView.layer.cornerRadius = 16
+                cell.textView.layer.masksToBounds = true
+                cell.textView.isEditable = false
+                cell.bubbleWidthAnchor?.constant = estimatFrameForText(text: txt2[indexPath.row]).width + 32
+                
+                
+                cell.bubbleViewLeftAnchor?.isActive = false
+                cell.bubbleViewRightAnchor?.isActive = true
+                cell.profileImageView.isHidden = true
+                
+                return cell
+            }else{
+                let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: "a", for: indexPath) as? nameCell)!
+                cell.nameDelegate = self
+                stopTimerTest()
+                return cell
+            }
+            
+            
+
+        }
         return cell
     }
 
@@ -143,60 +221,74 @@ class MainPageCVC: UICollectionViewController, UICollectionViewDelegateFlowLayou
         }
     }
 
-    func emailJoinBtn() {
-        print("예스 버튼 \(arrayNum)")
-        
+    lazy var sign : SignInVC = {
         let sign = SignInVC()
         sign.signBtnDelegate = self
         sign.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
-        
+        return sign
+    }()
+    
+    func emailJoinBtn() {
+        print("이메일 가입 버튼 \(arrayNum)")
         self.addChildViewController(sign)
         self.view.addSubview(sign.view)
-        
-        //self.present(sign, animated: true, completion: nil)
-        
-        
-//                if(arrayNum == 4){
-//                    print("txt2.cnt = \(txt2.count)")
-//                    txt2.remove(at: 3)
-//                    txt[4] = "넵~이메일로 가입할게요~"
-//                    print("txt2.cnt = \(txt2.count)")
-//                    let removeIndexPath = IndexPath(item: arrayNum-1, section: 0)
-//                    collectionView?.deleteItems(at: [removeIndexPath])
-//        }
-//                startTimerTest()
     }
 
-    @objc func noBtnTapped(){
-        print("아니요 버튼")
-    }
 }
 
 // ---------------------------------------------------------------------------------------------------------------- //
+protocol NameCellDelegate: class {
+    func nameInsertBtn(name:String)
+}
 
-class ACell: UICollectionViewCell {
-    let textView: UITextView = {
-        let tv = UITextView()
-        tv.text = "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ"
-        tv.backgroundColor = UIColor(red:0.16, green:0.70, blue:0.36, alpha:1.0)
-        tv.font = UIFont.systemFont(ofSize: 16)
-        tv.textColor = .black
-        tv.translatesAutoresizingMaskIntoConstraints = false
-        return tv
+class nameCell: UICollectionViewCell {
+    
+    var nameDelegate: NameCellDelegate?
+    
+    //이메일 텍스트 필드
+    let nameTextField : UITextField = {
+        let txtField = UITextField()
+        txtField.translatesAutoresizingMaskIntoConstraints = false
+        txtField.layer.masksToBounds = true
+        txtField.layer.cornerRadius = 10
+        txtField.layer.backgroundColor = UIColor.lightGray.cgColor
+        txtField.placeholder = " 닉네임"
+        return txtField
     }()
     
+    //기존 계정으로 로그인
+    lazy var nameButton : UIButton = {
+        let btn = UIButton()
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.setTitle("입력", for: UIControlState())
+        btn.setTitleColor(UIColor.darkGray, for: UIControlState())
+        btn.addTarget(self, action: #selector(nameInsert), for: .touchUpInside)
+        return btn
+    }()
+    
+    @objc func nameInsert(){
+        print("이름 입력됨. \(nameTextField.text)")
+        nameDelegate?.nameInsertBtn(name: nameTextField.text!)
+    }
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        addSubview(textView)
-        
+        addSubview(nameTextField)
+        addSubview(nameButton)
         //ios 9 constraints
         //x,y,w,h
-        textView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-        textView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        textView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        textView.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        textView.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
+        nameTextField.leftAnchor.constraint(equalTo: self.leftAnchor,constant:20).isActive = true
+        nameTextField.widthAnchor.constraint(equalToConstant: 250).isActive = true
+        //nameTextField.rightAnchor.constraint(equalTo: nameButton.leftAnchor, constant: -20)
+        nameTextField.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        nameTextField.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
+        
+        nameButton.leftAnchor.constraint(equalTo: nameTextField.rightAnchor,constant:20).isActive = true
+        nameButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20)
+        nameButton.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        nameButton.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
+        //nameButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -214,117 +306,42 @@ protocol CollectionViewCellDelegate: class {
 
 class EmailJoinCell: UICollectionViewCell {
 
-    
-    
     weak var delegate: CollectionViewCellDelegate?
     
     lazy var btn : UIButton = {
         let btn = UIButton(type: .system)
         btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.setTitle("@ 이메일 가입", for: UIControlState())
+        btn.setTitle("@ 이메일로 시작할래요", for: UIControlState())
         btn.setTitleColor(.black, for: UIControlState())
         btn.backgroundColor = UIColor(red:0.39, green:0.43, blue:0.81, alpha:1.0)
         btn.addTarget(self, action: #selector(btnbtn), for: .touchUpInside)
+        btn.layer.cornerRadius = 10
+        btn.layer.masksToBounds = true
         return btn
     }()
-    
-    lazy var btn2 : UIButton = {
-        let btn = UIButton(type: .system)
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.setTitle("이용약관", for: UIControlState())
-        btn.setTitleColor(.black, for: UIControlState())
-        btn.backgroundColor = UIColor.cyan
-        btn.addTarget(self, action: #selector(actionWithParam), for: .touchUpInside)
-        btn.tag = 1
-        return btn
-    }()
-    
-    
-    lazy var btn3 : UIButton = {
-        let btn = UIButton(type: .system)
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.setTitle("개인정보이용", for: UIControlState())
-        btn.setTitleColor(.black, for: UIControlState())
-        btn.backgroundColor = UIColor.blue
-        btn.addTarget(self, action: #selector(btnbtn2), for: .touchUpInside)
-        return btn
-    }()
-    
-    @objc func actionWithParam(){
-        print("이용약관 클릭")
-    }
-    
+
     @objc func btnbtn(){
         print("이메일가입 클릭 됏음")
 
         delegate?.emailJoinBtn()
     }
     
-    
 
-    
-    
-    @objc func btnbtn2(){
-        print("개인 정보 클릭됏음")
-    }
-    
-    
-    let lable : UILabel = {
-            let lbl = UILabel()
-            lbl.text = "과"
-            lbl.translatesAutoresizingMaskIntoConstraints = false
-            return lbl
-    }()
-    
-    let lable2 : UILabel = {
-        let lbl = UILabel()
-        lbl.text = "에 동의합니다."
-        lbl.translatesAutoresizingMaskIntoConstraints = false
-        return lbl
-    }()
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         self.addSubview(btn)
-        self.addSubview(btn2)
-        self.addSubview(btn3)
-        self.addSubview(lable)
-        self.addSubview(lable2)
+        
 
         //ios 9 constraints
         //x,y,w,h
 
         btn.leftAnchor.constraint(equalTo: self.leftAnchor,constant:20).isActive = true
-        btn.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -10).isActive = true
-        btn.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        btn.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -20).isActive = true
+        btn.topAnchor.constraint(equalTo: self.topAnchor,constant:30).isActive = true
         btn.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
-        
-        //이용약관
-        btn2.leftAnchor.constraint(equalTo: btn.leftAnchor).isActive = true
-        btn2.topAnchor.constraint(equalTo: btn.bottomAnchor,constant:20).isActive = true
-        btn2.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        btn2.heightAnchor.constraint(equalToConstant: 10).isActive = true
-        
-        //과
-        lable.leftAnchor.constraint(equalTo: btn2.rightAnchor,constant:5).isActive = true
-        lable.topAnchor.constraint(equalTo: btn.bottomAnchor,constant:20).isActive = true
-        lable.widthAnchor.constraint(equalToConstant: 5).isActive = true
-        lable.heightAnchor.constraint(equalToConstant: 10).isActive = true
-        
-        //개인정보
-        btn3.leftAnchor.constraint(equalTo: lable.rightAnchor).isActive = true
-        btn3.topAnchor.constraint(equalTo: btn.bottomAnchor,constant:20).isActive = true
-        btn3.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        btn3.heightAnchor.constraint(equalToConstant: 10).isActive = true
-        
-        //에 동의합니다.
-        lable2.leftAnchor.constraint(equalTo: btn3.rightAnchor).isActive = true
-        lable2.topAnchor.constraint(equalTo: btn.bottomAnchor,constant:20).isActive = true
-        lable2.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        lable2.heightAnchor.constraint(equalToConstant: 10).isActive = true
         
     }
     

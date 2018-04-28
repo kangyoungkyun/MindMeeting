@@ -22,6 +22,7 @@
 		52AE84E22090073200B5B771 /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AE84E12090073200B5B771 /* MainCollectionViewController.swift */; };
 		52CC9EDC2093E02E004829B8 /* SignInCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC9EDB2093E02E004829B8 /* SignInCVC.swift */; };
 		52CC9EDE2093E348004829B8 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC9EDD2093E348004829B8 /* SignInVC.swift */; };
+		52CC9EE02093F87C004829B8 /* TestUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC9EDF2093F87C004829B8 /* TestUIViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		52AE84E12090073200B5B771 /* MainCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
 		52CC9EDB2093E02E004829B8 /* SignInCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInCVC.swift; sourceTree = "<group>"; };
 		52CC9EDD2093E348004829B8 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
+		52CC9EDF2093F87C004829B8 /* TestUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUIViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				5298B6EF208DC77F00A28A5A /* MindMeeting.xcdatamodeld */,
 				521CB6A7208EE16300B320C1 /* read.txt */,
 				521CB6A9208EE18100B320C1 /* write.txt */,
+				52CC9EDF2093F87C004829B8 /* TestUIViewController.swift */,
 				52CC9EDB2093E02E004829B8 /* SignInCVC.swift */,
 				52AE84E12090073200B5B771 /* MainCollectionViewController.swift */,
 				521E83B92091FE61007FDB96 /* MainCollectionViewController2.swift */,
@@ -169,6 +172,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52CC9EE02093F87C004829B8 /* TestUIViewController.swift in Sources */,
 				5298B6E9208DC77F00A28A5A /* AppDelegate.swift in Sources */,
 				52AE84E22090073200B5B771 /* MainCollectionViewController.swift in Sources */,
 				52CC9EDE2093E348004829B8 /* SignInVC.swift in Sources */,
