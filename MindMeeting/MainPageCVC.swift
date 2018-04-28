@@ -9,10 +9,14 @@
 import UIKit
 
 
-class MainPageCVC: UICollectionViewController, UICollectionViewDelegateFlowLayout,CollectionViewCellDelegate {
-   
-
+class MainPageCVC: UICollectionViewController, UICollectionViewDelegateFlowLayout,CollectionViewCellDelegate,signButtonClickedDelegate {
     
+    
+    func signBtnClick(email: String, password: String) {
+        print("\(email)  \(password)")
+    }
+    
+
     var timer : Timer?
     
     var txt2 = [String]()
@@ -32,7 +36,7 @@ class MainPageCVC: UICollectionViewController, UICollectionViewDelegateFlowLayou
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //
+        
         self.collectionView!.register(MainPageTextCell.self, forCellWithReuseIdentifier: "txt")
         self.collectionView!.register(ACell.self, forCellWithReuseIdentifier: "a")
         self.collectionView!.register(EmailJoinCell.self, forCellWithReuseIdentifier: "b")
@@ -52,8 +56,7 @@ class MainPageCVC: UICollectionViewController, UICollectionViewDelegateFlowLayou
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        
+
         let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: "txt", for: indexPath) as? MainPageTextCell)!
         
         cell.textView.text = txt2[indexPath.row]
@@ -84,13 +87,13 @@ class MainPageCVC: UICollectionViewController, UICollectionViewDelegateFlowLayou
                 return cell
             }else{
                 let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: "b", for: indexPath) as? EmailJoinCell)!
+
                 cell.delegate = self
+                
                 stopTimerTest()
                 
                 return cell
             }
-            
-
         }
 //        else if(indexPath.item == 4){
 //            let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: "a", for: indexPath) as? ACell)!
@@ -98,6 +101,7 @@ class MainPageCVC: UICollectionViewController, UICollectionViewDelegateFlowLayou
 //        }
         return cell
     }
+
 
     //셀의 사이즈
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -138,29 +142,34 @@ class MainPageCVC: UICollectionViewController, UICollectionViewDelegateFlowLayou
             timer = nil
         }
     }
-    
-    
+
     func emailJoinBtn() {
         print("예스 버튼 \(arrayNum)")
-                if(arrayNum == 4){
-                    print("txt2.cnt = \(txt2.count)")
-                    txt2.remove(at: 3)
-                    txt[4] = "넵~이메일로 가입할게요~"
-                    print("txt2.cnt = \(txt2.count)")
-                    let removeIndexPath = IndexPath(item: arrayNum-1, section: 0)
-                    collectionView?.deleteItems(at: [removeIndexPath])
-                }
         
-                startTimerTest()
+        let sign = SignInVC()
+        sign.signBtnDelegate = self
+        sign.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        
+        self.addChildViewController(sign)
+        self.view.addSubview(sign.view)
+        
+        //self.present(sign, animated: true, completion: nil)
+        
+        
+//                if(arrayNum == 4){
+//                    print("txt2.cnt = \(txt2.count)")
+//                    txt2.remove(at: 3)
+//                    txt[4] = "넵~이메일로 가입할게요~"
+//                    print("txt2.cnt = \(txt2.count)")
+//                    let removeIndexPath = IndexPath(item: arrayNum-1, section: 0)
+//                    collectionView?.deleteItems(at: [removeIndexPath])
+//        }
+//                startTimerTest()
     }
-    
 
-    
     @objc func noBtnTapped(){
         print("아니요 버튼")
-        
     }
-    
 }
 
 // ---------------------------------------------------------------------------------------------------------------- //
@@ -196,7 +205,7 @@ class ACell: UICollectionViewCell {
 }
 
 
-
+// ---------------------------------------------------------------------------
 
 
 protocol CollectionViewCellDelegate: class {
@@ -204,68 +213,118 @@ protocol CollectionViewCellDelegate: class {
 }
 
 class EmailJoinCell: UICollectionViewCell {
+
+    
     
     weak var delegate: CollectionViewCellDelegate?
     
-    let textField : UITextField = {
-        let txtField = UITextField()
-        txtField.translatesAutoresizingMaskIntoConstraints = false
-        txtField.backgroundColor = .yellow
-        return txtField
-    }()
-    
     lazy var btn : UIButton = {
-        let btn = UIButton()
+        let btn = UIButton(type: .system)
         btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.setTitle("입력", for: UIControlState())
+        btn.setTitle("@ 이메일 가입", for: UIControlState())
         btn.setTitleColor(.black, for: UIControlState())
         btn.backgroundColor = UIColor(red:0.39, green:0.43, blue:0.81, alpha:1.0)
         btn.addTarget(self, action: #selector(btnbtn), for: .touchUpInside)
         return btn
     }()
     
-    @objc func btnbtn(){
-        delegate?.emailJoinBtn()
-    }
-    @objc func btnbtn2(){
-        print("수정 클릭 됏음")
-    }
     lazy var btn2 : UIButton = {
-        let btn = UIButton()
+        let btn = UIButton(type: .system)
         btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.setTitle("수정", for: UIControlState())
+        btn.setTitle("이용약관", for: UIControlState())
         btn.setTitleColor(.black, for: UIControlState())
         btn.backgroundColor = UIColor.cyan
+        btn.addTarget(self, action: #selector(actionWithParam), for: .touchUpInside)
+        btn.tag = 1
+        return btn
+    }()
+    
+    
+    lazy var btn3 : UIButton = {
+        let btn = UIButton(type: .system)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.setTitle("개인정보이용", for: UIControlState())
+        btn.setTitleColor(.black, for: UIControlState())
+        btn.backgroundColor = UIColor.blue
         btn.addTarget(self, action: #selector(btnbtn2), for: .touchUpInside)
         return btn
     }()
     
+    @objc func actionWithParam(){
+        print("이용약관 클릭")
+    }
+    
+    @objc func btnbtn(){
+        print("이메일가입 클릭 됏음")
+
+        delegate?.emailJoinBtn()
+    }
+    
+    
+
+    
+    
+    @objc func btnbtn2(){
+        print("개인 정보 클릭됏음")
+    }
+    
+    
+    let lable : UILabel = {
+            let lbl = UILabel()
+            lbl.text = "과"
+            lbl.translatesAutoresizingMaskIntoConstraints = false
+            return lbl
+    }()
+    
+    let lable2 : UILabel = {
+        let lbl = UILabel()
+        lbl.text = "에 동의합니다."
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        return lbl
+    }()
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        addSubview(textField)
-        addSubview(btn)
-        addSubview(btn2)
-        
-        
+        self.addSubview(btn)
+        self.addSubview(btn2)
+        self.addSubview(btn3)
+        self.addSubview(lable)
+        self.addSubview(lable2)
+
         //ios 9 constraints
         //x,y,w,h
-        textField.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-        textField.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        textField.trailingAnchor.constraint(equalTo: btn.leadingAnchor).isActive = true
-        textField.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
-        
-        btn.leftAnchor.constraint(equalTo: textField.rightAnchor).isActive = true
-        btn.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+
+        btn.leftAnchor.constraint(equalTo: self.leftAnchor,constant:20).isActive = true
+        btn.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -10).isActive = true
         btn.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        btn.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        btn.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.5).isActive = true
+        btn.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
-        btn2.leftAnchor.constraint(equalTo: textField.rightAnchor).isActive = true
-        btn2.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        btn2.topAnchor.constraint(equalTo: btn.bottomAnchor).isActive = true
-        btn2.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        btn2.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.5).isActive = true
+        
+        //이용약관
+        btn2.leftAnchor.constraint(equalTo: btn.leftAnchor).isActive = true
+        btn2.topAnchor.constraint(equalTo: btn.bottomAnchor,constant:20).isActive = true
+        btn2.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        btn2.heightAnchor.constraint(equalToConstant: 10).isActive = true
+        
+        //과
+        lable.leftAnchor.constraint(equalTo: btn2.rightAnchor,constant:5).isActive = true
+        lable.topAnchor.constraint(equalTo: btn.bottomAnchor,constant:20).isActive = true
+        lable.widthAnchor.constraint(equalToConstant: 5).isActive = true
+        lable.heightAnchor.constraint(equalToConstant: 10).isActive = true
+        
+        //개인정보
+        btn3.leftAnchor.constraint(equalTo: lable.rightAnchor).isActive = true
+        btn3.topAnchor.constraint(equalTo: btn.bottomAnchor,constant:20).isActive = true
+        btn3.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        btn3.heightAnchor.constraint(equalToConstant: 10).isActive = true
+        
+        //에 동의합니다.
+        lable2.leftAnchor.constraint(equalTo: btn3.rightAnchor).isActive = true
+        lable2.topAnchor.constraint(equalTo: btn.bottomAnchor,constant:20).isActive = true
+        lable2.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        lable2.heightAnchor.constraint(equalToConstant: 10).isActive = true
         
     }
     
@@ -273,6 +332,8 @@ class EmailJoinCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+// --------------------------------------------------------------------------------------------------------
 
 class MainPageTextCell: UICollectionViewCell {
     
@@ -313,12 +374,10 @@ class MainPageTextCell: UICollectionViewCell {
         addSubview(textView)
         addSubview(profileImageView)
         
-        
         profileImageView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 8).isActive = true
         profileImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         profileImageView.widthAnchor.constraint(equalToConstant: 32).isActive = true
         profileImageView.heightAnchor.constraint(equalToConstant: 32).isActive = true
-        
         
         //ios 9 constraints
         //x,y,w,h

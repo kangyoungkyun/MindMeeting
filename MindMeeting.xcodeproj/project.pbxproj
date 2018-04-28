@@ -20,6 +20,8 @@
 		5298B6FE208DC8A100A28A5A /* MainPageCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5298B6FD208DC8A100A28A5A /* MainPageCVC.swift */; };
 		5298B700208DCCA300A28A5A /* MainPageTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5298B6FF208DCCA300A28A5A /* MainPageTextCell.swift */; };
 		52AE84E22090073200B5B771 /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AE84E12090073200B5B771 /* MainCollectionViewController.swift */; };
+		52CC9EDC2093E02E004829B8 /* SignInCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC9EDB2093E02E004829B8 /* SignInCVC.swift */; };
+		52CC9EDE2093E348004829B8 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC9EDD2093E348004829B8 /* SignInVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		5298B6FD208DC8A100A28A5A /* MainPageCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageCVC.swift; sourceTree = "<group>"; };
 		5298B6FF208DCCA300A28A5A /* MainPageTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageTextCell.swift; sourceTree = "<group>"; };
 		52AE84E12090073200B5B771 /* MainCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
+		52CC9EDB2093E02E004829B8 /* SignInCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInCVC.swift; sourceTree = "<group>"; };
+		52CC9EDD2093E348004829B8 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,7 @@
 				521CB6AB208F003300B320C1 /* LoginCell.swift */,
 				5298B6E8208DC77F00A28A5A /* AppDelegate.swift */,
 				5298B6FD208DC8A100A28A5A /* MainPageCVC.swift */,
+				52CC9EDD2093E348004829B8 /* SignInVC.swift */,
 				5298B6EC208DC77F00A28A5A /* Main.storyboard */,
 				5298B6F2208DC77F00A28A5A /* Assets.xcassets */,
 				5298B6F4208DC77F00A28A5A /* LaunchScreen.storyboard */,
@@ -82,6 +87,7 @@
 				5298B6EF208DC77F00A28A5A /* MindMeeting.xcdatamodeld */,
 				521CB6A7208EE16300B320C1 /* read.txt */,
 				521CB6A9208EE18100B320C1 /* write.txt */,
+				52CC9EDB2093E02E004829B8 /* SignInCVC.swift */,
 				52AE84E12090073200B5B771 /* MainCollectionViewController.swift */,
 				521E83B92091FE61007FDB96 /* MainCollectionViewController2.swift */,
 			);
@@ -165,8 +171,10 @@
 			files = (
 				5298B6E9208DC77F00A28A5A /* AppDelegate.swift in Sources */,
 				52AE84E22090073200B5B771 /* MainCollectionViewController.swift in Sources */,
+				52CC9EDE2093E348004829B8 /* SignInVC.swift in Sources */,
 				521E83BA2091FE61007FDB96 /* MainCollectionViewController2.swift in Sources */,
 				5298B6FE208DC8A100A28A5A /* MainPageCVC.swift in Sources */,
+				52CC9EDC2093E02E004829B8 /* SignInCVC.swift in Sources */,
 				521CB6AC208F003300B320C1 /* LoginCell.swift in Sources */,
 				5298B6F1208DC77F00A28A5A /* MindMeeting.xcdatamodeld in Sources */,
 				5298B700208DCCA300A28A5A /* MainPageTextCell.swift in Sources */,
