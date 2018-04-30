@@ -10,27 +10,25 @@
 		520609852090F8B800EF10C4 /* kyk2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 520609842090F8B800EF10C4 /* kyk2.jpeg */; };
 		521CB6A8208EE16300B320C1 /* read.txt in Resources */ = {isa = PBXBuildFile; fileRef = 521CB6A7208EE16300B320C1 /* read.txt */; };
 		521CB6AA208EE18100B320C1 /* write.txt in Resources */ = {isa = PBXBuildFile; fileRef = 521CB6A9208EE18100B320C1 /* write.txt */; };
-		521CB6AC208F003300B320C1 /* LoginCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521CB6AB208F003300B320C1 /* LoginCell.swift */; };
-		521E83BA2091FE61007FDB96 /* MainCollectionViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E83B92091FE61007FDB96 /* MainCollectionViewController2.swift */; };
+		52391C1C2097038300BF2F72 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52391C1B2097038300BF2F72 /* GoogleService-Info.plist */; };
 		5298B6E9208DC77F00A28A5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5298B6E8208DC77F00A28A5A /* AppDelegate.swift */; };
 		5298B6EE208DC77F00A28A5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5298B6EC208DC77F00A28A5A /* Main.storyboard */; };
 		5298B6F1208DC77F00A28A5A /* MindMeeting.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5298B6EF208DC77F00A28A5A /* MindMeeting.xcdatamodeld */; };
 		5298B6F3208DC77F00A28A5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5298B6F2208DC77F00A28A5A /* Assets.xcassets */; };
 		5298B6F6208DC77F00A28A5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5298B6F4208DC77F00A28A5A /* LaunchScreen.storyboard */; };
 		5298B6FE208DC8A100A28A5A /* MainPageCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5298B6FD208DC8A100A28A5A /* MainPageCVC.swift */; };
-		5298B700208DCCA300A28A5A /* MainPageTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5298B6FF208DCCA300A28A5A /* MainPageTextCell.swift */; };
-		52AE84E22090073200B5B771 /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AE84E12090073200B5B771 /* MainCollectionViewController.swift */; };
-		52CC9EDC2093E02E004829B8 /* SignInCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC9EDB2093E02E004829B8 /* SignInCVC.swift */; };
 		52CC9EDE2093E348004829B8 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC9EDD2093E348004829B8 /* SignInVC.swift */; };
-		52CC9EE02093F87C004829B8 /* TestUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC9EDF2093F87C004829B8 /* TestUIViewController.swift */; };
+		52FB9B6420970F9E00A0FD2A /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FB9B6320970F9E00A0FD2A /* File.swift */; };
+		925364F298AC333A0BBA0A5E /* Pods_MindMeeting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FC1C8D7E7E428530671C81D /* Pods_MindMeeting.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		21723E5AD3452290C4ADCFDC /* Pods-MindMeeting.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MindMeeting.release.xcconfig"; path = "Pods/Target Support Files/Pods-MindMeeting/Pods-MindMeeting.release.xcconfig"; sourceTree = "<group>"; };
+		2FC1C8D7E7E428530671C81D /* Pods_MindMeeting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MindMeeting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		520609842090F8B800EF10C4 /* kyk2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kyk2.jpeg; sourceTree = "<group>"; };
 		521CB6A7208EE16300B320C1 /* read.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = read.txt; sourceTree = "<group>"; };
 		521CB6A9208EE18100B320C1 /* write.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = write.txt; sourceTree = "<group>"; };
-		521CB6AB208F003300B320C1 /* LoginCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCell.swift; sourceTree = "<group>"; };
-		521E83B92091FE61007FDB96 /* MainCollectionViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController2.swift; sourceTree = "<group>"; };
+		52391C1B2097038300BF2F72 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5298B6E5208DC77F00A28A5A /* MindMeeting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MindMeeting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5298B6E8208DC77F00A28A5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5298B6ED208DC77F00A28A5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -39,11 +37,9 @@
 		5298B6F5208DC77F00A28A5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5298B6F7208DC77F00A28A5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5298B6FD208DC8A100A28A5A /* MainPageCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageCVC.swift; sourceTree = "<group>"; };
-		5298B6FF208DCCA300A28A5A /* MainPageTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageTextCell.swift; sourceTree = "<group>"; };
-		52AE84E12090073200B5B771 /* MainCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
-		52CC9EDB2093E02E004829B8 /* SignInCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInCVC.swift; sourceTree = "<group>"; };
 		52CC9EDD2093E348004829B8 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
-		52CC9EDF2093F87C004829B8 /* TestUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUIViewController.swift; sourceTree = "<group>"; };
+		52FB9B6320970F9E00A0FD2A /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		78F8F5B7745747293506BA46 /* Pods-MindMeeting.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MindMeeting.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MindMeeting/Pods-MindMeeting.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,17 +47,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				925364F298AC333A0BBA0A5E /* Pods_MindMeeting.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E62A56D08D1DB863FFF86CB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				78F8F5B7745747293506BA46 /* Pods-MindMeeting.debug.xcconfig */,
+				21723E5AD3452290C4ADCFDC /* Pods-MindMeeting.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		5298B6DC208DC77F00A28A5A = {
 			isa = PBXGroup;
 			children = (
 				5298B6E7208DC77F00A28A5A /* MindMeeting */,
 				5298B6E6208DC77F00A28A5A /* Products */,
+				1E62A56D08D1DB863FFF86CB /* Pods */,
+				F03E2DA15234DEC396D82048 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,8 +85,6 @@
 			isa = PBXGroup;
 			children = (
 				520609842090F8B800EF10C4 /* kyk2.jpeg */,
-				5298B6FF208DCCA300A28A5A /* MainPageTextCell.swift */,
-				521CB6AB208F003300B320C1 /* LoginCell.swift */,
 				5298B6E8208DC77F00A28A5A /* AppDelegate.swift */,
 				5298B6FD208DC8A100A28A5A /* MainPageCVC.swift */,
 				52CC9EDD2093E348004829B8 /* SignInVC.swift */,
@@ -87,14 +93,20 @@
 				5298B6F4208DC77F00A28A5A /* LaunchScreen.storyboard */,
 				5298B6F7208DC77F00A28A5A /* Info.plist */,
 				5298B6EF208DC77F00A28A5A /* MindMeeting.xcdatamodeld */,
+				52391C1B2097038300BF2F72 /* GoogleService-Info.plist */,
 				521CB6A7208EE16300B320C1 /* read.txt */,
 				521CB6A9208EE18100B320C1 /* write.txt */,
-				52CC9EDF2093F87C004829B8 /* TestUIViewController.swift */,
-				52CC9EDB2093E02E004829B8 /* SignInCVC.swift */,
-				52AE84E12090073200B5B771 /* MainCollectionViewController.swift */,
-				521E83B92091FE61007FDB96 /* MainCollectionViewController2.swift */,
+				52FB9B6320970F9E00A0FD2A /* File.swift */,
 			);
 			path = MindMeeting;
+			sourceTree = "<group>";
+		};
+		F03E2DA15234DEC396D82048 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2FC1C8D7E7E428530671C81D /* Pods_MindMeeting.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -104,9 +116,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5298B6FA208DC77F00A28A5A /* Build configuration list for PBXNativeTarget "MindMeeting" */;
 			buildPhases = (
+				26DEDB7B59D57B9E08151217 /* [CP] Check Pods Manifest.lock */,
 				5298B6E1208DC77F00A28A5A /* Sources */,
 				5298B6E2208DC77F00A28A5A /* Frameworks */,
 				5298B6E3208DC77F00A28A5A /* Resources */,
+				B52D43E672939802190BC7C8 /* [CP] Embed Pods Frameworks */,
+				9CF862BC689275B1DD3FDEA9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -161,27 +176,83 @@
 				5298B6F3208DC77F00A28A5A /* Assets.xcassets in Resources */,
 				520609852090F8B800EF10C4 /* kyk2.jpeg in Resources */,
 				521CB6A8208EE16300B320C1 /* read.txt in Resources */,
+				52391C1C2097038300BF2F72 /* GoogleService-Info.plist in Resources */,
 				5298B6EE208DC77F00A28A5A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		26DEDB7B59D57B9E08151217 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MindMeeting-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9CF862BC689275B1DD3FDEA9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MindMeeting/Pods-MindMeeting-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B52D43E672939802190BC7C8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MindMeeting/Pods-MindMeeting-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MindMeeting/Pods-MindMeeting-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5298B6E1208DC77F00A28A5A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52CC9EE02093F87C004829B8 /* TestUIViewController.swift in Sources */,
+				52FB9B6420970F9E00A0FD2A /* File.swift in Sources */,
 				5298B6E9208DC77F00A28A5A /* AppDelegate.swift in Sources */,
-				52AE84E22090073200B5B771 /* MainCollectionViewController.swift in Sources */,
 				52CC9EDE2093E348004829B8 /* SignInVC.swift in Sources */,
-				521E83BA2091FE61007FDB96 /* MainCollectionViewController2.swift in Sources */,
 				5298B6FE208DC8A100A28A5A /* MainPageCVC.swift in Sources */,
-				52CC9EDC2093E02E004829B8 /* SignInCVC.swift in Sources */,
-				521CB6AC208F003300B320C1 /* LoginCell.swift in Sources */,
 				5298B6F1208DC77F00A28A5A /* MindMeeting.xcdatamodeld in Sources */,
-				5298B700208DCCA300A28A5A /* MainPageTextCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,6 +387,7 @@
 		};
 		5298B6FB208DC77F00A28A5A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78F8F5B7745747293506BA46 /* Pods-MindMeeting.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -331,6 +403,7 @@
 		};
 		5298B6FC208DC77F00A28A5A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21723E5AD3452290C4ADCFDC /* Pods-MindMeeting.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
