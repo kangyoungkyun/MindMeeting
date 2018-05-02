@@ -14,7 +14,8 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var tabBarController:UITabBarController?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
@@ -22,12 +23,60 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         window?.makeKeyAndVisible()
         
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        let loginCVC = MainPageCVC(collectionViewLayout: layout)
+        //let questionTVC = QuestionListTVC()
+       // window?.rootViewController = questionTVC
         
-        window?.rootViewController = loginCVC
         
+        
+        //로그인 성공 후 기본 레이아웃은 탭바 컨트롤러
+        tabBarController = UITabBarController()
+        tabBarController?.view.backgroundColor = UIColor.white
+        tabBarController?.view.tintColor = UIColor(red:0.20, green:0.20, blue:0.20, alpha:1.0)
+        tabBarController?.tabBar.barTintColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.0)
+        
+        tabBarController?.tabBar.setValue(true, forKey: "_hidesShadow")
+        UITabBar.appearance().shadowImage = UIImage()
+        UITabBar.appearance().backgroundColor = UIColor.white
+        UITabBar.appearance().layer.borderWidth = 0.0
+        UITabBar.appearance().clipsToBounds = true
+        
+        
+        let questionListTVC = QuestionListTVC()
+
+
+        let questionListNav = UINavigationController(rootViewController: questionListTVC)
+ 
+        tabBarController?.setViewControllers([questionListNav], animated: false)
+        
+
+        //탭바 이미지 넣기
+        //questionListNav.tabBarItem.image = UIImage(named:"ic_assignment_ind")?.withRenderingMode(.alwaysTemplate)
+
+        //이미지 선택되었을 때
+        //questionListNav.tabBarItem.selectedImage = UIImage(named:"ic_assignment_ind")?.withRenderingMode(.alwaysOriginal)
+
+        questionListNav.tabBarItem.title = "질문방"
+
+
+        let appearance = UITabBarItem.appearance()
+        let attributes = [NSAttributedStringKey.font:UIFont(name: "NanumMyeongjo-YetHangul", size: 10)]
+        appearance.setTitleTextAttributes((attributes as Any as! [NSAttributedStringKey : Any]), for: .normal)
+
+
+        UINavigationBar.appearance().titleTextAttributes = [
+            NSAttributedStringKey.font: UIFont(name: "NanumMyeongjo-YetHangul", size: 20)!
+        ]
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedStringKey.font: UIFont(name: "NanumMyeongjo-YetHangul", size: 15)!], for: UIControlState.normal)
+
+
+//        let layout = UICollectionViewFlowLayout()
+//        layout.scrollDirection = .vertical
+//        let loginCVC = MainPageCVC(collectionViewLayout: layout)
+        
+//        window?.rootViewController = loginCVC
+        
+        
+        window?.rootViewController = tabBarController
         return true
     }
 

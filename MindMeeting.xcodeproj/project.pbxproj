@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		520609852090F8B800EF10C4 /* kyk2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 520609842090F8B800EF10C4 /* kyk2.jpeg */; };
+		5218819C2099264700D6C917 /* QuestionListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5218819B2099264700D6C917 /* QuestionListTVC.swift */; };
+		521881A220992C9F00D6C917 /* ic_assignment_ind.png in Resources */ = {isa = PBXBuildFile; fileRef = 521881A120992C9F00D6C917 /* ic_assignment_ind.png */; };
+		521881A420992D4600D6C917 /* NanumMyeongjo-YetHangul.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 521881A320992D3F00D6C917 /* NanumMyeongjo-YetHangul.ttf */; };
+		521881A520992E0E00D6C917 /* NanumBarunGothicUltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5218819E20992B8100D6C917 /* NanumBarunGothicUltraLight.otf */; };
+		521881A620992E1100D6C917 /* NanumBarunGothicLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5218819F20992B8100D6C917 /* NanumBarunGothicLight.otf */; };
 		521CB6A8208EE16300B320C1 /* read.txt in Resources */ = {isa = PBXBuildFile; fileRef = 521CB6A7208EE16300B320C1 /* read.txt */; };
 		521CB6AA208EE18100B320C1 /* write.txt in Resources */ = {isa = PBXBuildFile; fileRef = 521CB6A9208EE18100B320C1 /* write.txt */; };
 		52391C1C2097038300BF2F72 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52391C1B2097038300BF2F72 /* GoogleService-Info.plist */; };
@@ -18,7 +23,6 @@
 		5298B6F6208DC77F00A28A5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5298B6F4208DC77F00A28A5A /* LaunchScreen.storyboard */; };
 		5298B6FE208DC8A100A28A5A /* MainPageCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5298B6FD208DC8A100A28A5A /* MainPageCVC.swift */; };
 		52CC9EDE2093E348004829B8 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC9EDD2093E348004829B8 /* SignInVC.swift */; };
-		52FB9B6420970F9E00A0FD2A /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FB9B6320970F9E00A0FD2A /* File.swift */; };
 		925364F298AC333A0BBA0A5E /* Pods_MindMeeting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FC1C8D7E7E428530671C81D /* Pods_MindMeeting.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +30,11 @@
 		21723E5AD3452290C4ADCFDC /* Pods-MindMeeting.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MindMeeting.release.xcconfig"; path = "Pods/Target Support Files/Pods-MindMeeting/Pods-MindMeeting.release.xcconfig"; sourceTree = "<group>"; };
 		2FC1C8D7E7E428530671C81D /* Pods_MindMeeting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MindMeeting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		520609842090F8B800EF10C4 /* kyk2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kyk2.jpeg; sourceTree = "<group>"; };
+		5218819B2099264700D6C917 /* QuestionListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionListTVC.swift; sourceTree = "<group>"; };
+		5218819E20992B8100D6C917 /* NanumBarunGothicUltraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicUltraLight.otf; sourceTree = "<group>"; };
+		5218819F20992B8100D6C917 /* NanumBarunGothicLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicLight.otf; sourceTree = "<group>"; };
+		521881A120992C9F00D6C917 /* ic_assignment_ind.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_assignment_ind.png; sourceTree = "<group>"; };
+		521881A320992D3F00D6C917 /* NanumMyeongjo-YetHangul.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumMyeongjo-YetHangul.ttf"; sourceTree = "<group>"; };
 		521CB6A7208EE16300B320C1 /* read.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = read.txt; sourceTree = "<group>"; };
 		521CB6A9208EE18100B320C1 /* write.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = write.txt; sourceTree = "<group>"; };
 		52391C1B2097038300BF2F72 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -38,7 +47,6 @@
 		5298B6F7208DC77F00A28A5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5298B6FD208DC8A100A28A5A /* MainPageCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageCVC.swift; sourceTree = "<group>"; };
 		52CC9EDD2093E348004829B8 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
-		52FB9B6320970F9E00A0FD2A /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		78F8F5B7745747293506BA46 /* Pods-MindMeeting.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MindMeeting.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MindMeeting/Pods-MindMeeting.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,6 +71,27 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5218819D2099265300D6C917 /* LoginPage */ = {
+			isa = PBXGroup;
+			children = (
+				5298B6FD208DC8A100A28A5A /* MainPageCVC.swift */,
+				52CC9EDD2093E348004829B8 /* SignInVC.swift */,
+			);
+			path = LoginPage;
+			sourceTree = "<group>";
+		};
+		521881A020992B8900D6C917 /* File */ = {
+			isa = PBXGroup;
+			children = (
+				521881A320992D3F00D6C917 /* NanumMyeongjo-YetHangul.ttf */,
+				521881A120992C9F00D6C917 /* ic_assignment_ind.png */,
+				5218819E20992B8100D6C917 /* NanumBarunGothicUltraLight.otf */,
+				520609842090F8B800EF10C4 /* kyk2.jpeg */,
+				5218819F20992B8100D6C917 /* NanumBarunGothicLight.otf */,
+			);
+			path = File;
+			sourceTree = "<group>";
+		};
 		5298B6DC208DC77F00A28A5A = {
 			isa = PBXGroup;
 			children = (
@@ -84,10 +113,10 @@
 		5298B6E7208DC77F00A28A5A /* MindMeeting */ = {
 			isa = PBXGroup;
 			children = (
-				520609842090F8B800EF10C4 /* kyk2.jpeg */,
+				521881A020992B8900D6C917 /* File */,
 				5298B6E8208DC77F00A28A5A /* AppDelegate.swift */,
-				5298B6FD208DC8A100A28A5A /* MainPageCVC.swift */,
-				52CC9EDD2093E348004829B8 /* SignInVC.swift */,
+				5218819D2099265300D6C917 /* LoginPage */,
+				5218819B2099264700D6C917 /* QuestionListTVC.swift */,
 				5298B6EC208DC77F00A28A5A /* Main.storyboard */,
 				5298B6F2208DC77F00A28A5A /* Assets.xcassets */,
 				5298B6F4208DC77F00A28A5A /* LaunchScreen.storyboard */,
@@ -96,7 +125,6 @@
 				52391C1B2097038300BF2F72 /* GoogleService-Info.plist */,
 				521CB6A7208EE16300B320C1 /* read.txt */,
 				521CB6A9208EE18100B320C1 /* write.txt */,
-				52FB9B6320970F9E00A0FD2A /* File.swift */,
 			);
 			path = MindMeeting;
 			sourceTree = "<group>";
@@ -176,7 +204,11 @@
 				5298B6F3208DC77F00A28A5A /* Assets.xcassets in Resources */,
 				520609852090F8B800EF10C4 /* kyk2.jpeg in Resources */,
 				521CB6A8208EE16300B320C1 /* read.txt in Resources */,
+				521881A420992D4600D6C917 /* NanumMyeongjo-YetHangul.ttf in Resources */,
+				521881A620992E1100D6C917 /* NanumBarunGothicLight.otf in Resources */,
+				521881A520992E0E00D6C917 /* NanumBarunGothicUltraLight.otf in Resources */,
 				52391C1C2097038300BF2F72 /* GoogleService-Info.plist in Resources */,
+				521881A220992C9F00D6C917 /* ic_assignment_ind.png in Resources */,
 				5298B6EE208DC77F00A28A5A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,8 +280,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52FB9B6420970F9E00A0FD2A /* File.swift in Sources */,
 				5298B6E9208DC77F00A28A5A /* AppDelegate.swift in Sources */,
+				5218819C2099264700D6C917 /* QuestionListTVC.swift in Sources */,
 				52CC9EDE2093E348004829B8 /* SignInVC.swift in Sources */,
 				5298B6FE208DC8A100A28A5A /* MainPageCVC.swift in Sources */,
 				5298B6F1208DC77F00A28A5A /* MindMeeting.xcdatamodeld in Sources */,
